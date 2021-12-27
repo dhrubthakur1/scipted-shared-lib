@@ -10,8 +10,7 @@ public class ReadSpecFile{
 
   void execute(def conf = [:], String name="Read Specfile") {
     script.stage(name) {
-      script{
-        script{                                      
+      script{                                            
                    bat "echo ${conf.url}"
 		   checkOut.startBuild(conf)
 		   bat 'echo "read yml start"'
@@ -29,8 +28,7 @@ public class ReadSpecFile{
 		   conf.put('contextPath', deployData.application.contextPath);	 		   
 		   bat "echo ${env.buildRequired}"
 		   bat "echo conf: ${conf}" 
-                 }
-      }
+            }
         }
     }
 }
