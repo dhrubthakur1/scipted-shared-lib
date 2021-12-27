@@ -11,7 +11,7 @@ public class CheckOut {
         script.stage(name) {
             script.bat "echo Triggering ${name} stage..."
             script.bat "echo 'Execute your desired bash command here'"
-            
+            script.git url:conf.url, branch:conf.branch
         }
     }
 }
