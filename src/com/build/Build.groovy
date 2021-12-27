@@ -2,10 +2,11 @@ package com.build;
 
 public class Build {
   private final Script script
-  def maven = script.tool 'MAVEN_PATH'
+  def maven;
 
     Build(Script script) {
         this.script = script
+      this.maven = script.tool 'MAVEN_PATH'
     }
 
   public void execute(def conf = [:], String name="Build") {
