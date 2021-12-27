@@ -15,7 +15,7 @@ public class Build {
                 echo "PATH = ${PATH}"
             '''         
         }
-            script.bat "maven --version"
+          script.bat "${maven}/bin/mvn --version"
             script.bat "java -version"
             script.bat "echo 'Execute your desired bash command here'"
             script.git url:conf.url, branch:conf.branch
