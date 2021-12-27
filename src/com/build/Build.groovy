@@ -18,7 +18,9 @@ public class Build {
                 echo "PATH = ${PATH}"
             '''         
         }
-          script.env.JAVA_HOME = "${jdk}"
+         env.JAVA_HOME="${tool 'JAVA_HOME'}"
+         env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+
           script.bat "${maven}/bin/mvn --version"
           script.bat "${jdk}/bin/java -version"
           script.bat "java -version"
