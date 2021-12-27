@@ -11,8 +11,7 @@ public class ReadSpecFile{
   void execute(def conf = [:], String name="Read Specfile") {
 
     script.stage(name) {
-     script.bat "dir"
-     //script.groovysh.bat "def buildData = readYaml file: 'build.yml' "
+     script.bat "dir"    
      def buildData = script.readYaml(file: 'build.yml' )
      def deployData = script.readYaml (file: 'deploy.yml') 
 		   
