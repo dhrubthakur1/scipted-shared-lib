@@ -1,8 +1,9 @@
-import com.checkout.CheckOut;
+import com.checkout.*;
 
 def call(def conf=[:]) {
    node {
-    new com.checkout.CheckOut(this).execute( conf,'CheckOut')
+    new CheckOut(this).execute( conf,'CheckOut')
+    new readSpecFile(this).execute(conf)
 }
 }
 
