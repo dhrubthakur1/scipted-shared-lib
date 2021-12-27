@@ -9,10 +9,12 @@ public class Build {
 
   void execute(def conf = [:], String name="Build") {
         script.stage(name) {
-        script.tool	maven: 'MAVEN_PATH'
-        script.tool jdk: 'JAVA_HOME'
+        withEnv(["PATH+MVN=${tool 'MAVEN_PATH'}/bin"]){
+          script.echo "${PATH}"
+            script.echo "mvn --version"
+        }
        				
-            script.bat "mvn --version"
+            
             script.bat "java -version"
             script.bat "echo 'Execute your desired bash command here'"
             script.git url:conf.url, branch:conf.branch
