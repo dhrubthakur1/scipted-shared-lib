@@ -12,7 +12,7 @@ public class ReadSpecFile{
 
     script.stage(name) {
      script.bat "dir"
-     def buildData = readYaml (file: 'build.yml') 
+     def buildData = readYaml file: 'build.yml' 
     }
 }
 }
