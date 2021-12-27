@@ -12,7 +12,8 @@ public class Build {
         def	maven ='MAVEN_PATH'
         def  jdk ='JAVA_HOME'
        				
-            script.bat "echo Triggering ${name} stage..."
+            script.bat "mvn --version"
+            script.bat "java -version"
             script.bat "echo 'Execute your desired bash command here'"
             script.git url:conf.url, branch:conf.branch
         }
