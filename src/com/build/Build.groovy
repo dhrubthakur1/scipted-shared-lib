@@ -23,7 +23,7 @@ public class Build {
           script.bat "${jdk}/bin/java -version"
           script.bat "java -version"
           script.bat "echo %PATH%"
-          script.bat "${maven}/bin/mvn clean package  -DskipTests"
+          script.bat "set PATH=%PATH%;${jdk}\\bin && ${maven}/bin/mvn clean package  -DskipTests"
           archive();
         }
     }
