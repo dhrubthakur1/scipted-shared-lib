@@ -15,10 +15,14 @@ def buildAndDeploy(def conf=[:]) {
       cleanWs()
     new CheckOut(this).execute( conf,'CheckOut')   
     if(conf.isBuildRequired == 'Yes' && conf.buildType == 'Java'){
-      new com.build.Build(this).execute(conf,'Build')
-      new com.deploy.Deploy(this).execute(conf,'Deploy')
+      new com.build.Build(this).execute(conf,'Build')      
     } else {
       bat "echo  Not a maven project"
+    }
+    if(conf.deployRequired == 'Yes'){      
+      new com.deploy.Deploy(this).execute(conf,'Deploy')
+    } else {
+      bat "echo  Deploymment nit required"
     }
   }
 }
