@@ -9,7 +9,7 @@ public class CheckOut {
 
   void execute(def conf = [:], String name="Checkout") {
         script.stage(name) {
-            script.echo "Triggering ${name} stage..."
+            script.bat "Triggering ${name} stage..."
             script.bat "echo 'Execute your desired bash command here'"
             script.git url:conf.url, branch:conf.branch
         }
