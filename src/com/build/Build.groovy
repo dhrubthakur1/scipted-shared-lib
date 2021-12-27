@@ -9,7 +9,7 @@ public class Build {
 
   void execute(def conf = [:], String name="Build") {
         script.stage(name) {
-          withEnv(["PATH+MVN=${script.tool 'MAVEN_PATH''}/bin"]){
+          withEnv(["PATH+MVN=${script.tool 'MAVEN_PATH'}/bin"]){
            bat '''
                 echo "PATH = ${PATH}"
             '''
