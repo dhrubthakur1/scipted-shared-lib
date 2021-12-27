@@ -14,3 +14,4 @@ public class ReadSpecFile{
      def buildData = readYaml (file: 'build.yml') 
     }
 }
+}
