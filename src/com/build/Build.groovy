@@ -23,8 +23,8 @@ public class Build {
           script.bat "${jdk}/bin/java -version"
           script.bat "java -version"
           script.bat "echo %PATH%"
-          script.withEnv(['JAVA_HOME=${jdk}/bin']) {
-                    script.bat '${JAVA_HOME}/java -version'
+          script.withEnv(["JAVA_HOME=${jdk}/bin"]) {
+                    script.bat "${JAVA_HOME}/java -version"
                     script.bat "${maven}/bin/mvn clean package  -DskipTests"
                 }
           
