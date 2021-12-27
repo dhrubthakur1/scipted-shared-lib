@@ -6,4 +6,7 @@ public class Deploy {
     Deploy(Script script) {
         this.script = script
     }
+   public void execute(def conf=[:], String name='Deploy'){
+   
+   }
 }
