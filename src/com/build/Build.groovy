@@ -11,6 +11,7 @@ public class Build {
 
   public void execute(def conf = [:], String name="Build") {
     def maven = script.tool 'MAVEN_PATH'
+    def jdk = script.tool 'JAVA_HOME'
         script.stage(name) {
           script.withEnv(["PATH+MVN=${script.tool 'MAVEN_PATH'}/bin"]){
            script.bat '''
@@ -18,6 +19,7 @@ public class Build {
             '''         
         }
           script.bat "${maven}/bin/mvn --version"
+          script.bat "${jdk}/bin/java -version"
           script.bat "java -version"
           script.bat "${maven}/bin/mvn clean package  -DskipTests"
           archive();
