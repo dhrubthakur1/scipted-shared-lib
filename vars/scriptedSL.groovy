@@ -3,7 +3,7 @@ import com.checkout.*;
 def call(def conf=[:]) {
    node {
     new CheckOut(this).execute( conf,'CheckOut')
-    new readSpecFile(this).execute(conf)
+    new ReadSpecFile(this).execute(conf)
 }
 }
 
