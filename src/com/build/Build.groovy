@@ -18,7 +18,7 @@ public class Build {
                 echo "PATH = ${PATH}"
             '''         
         }
-          script.bat "set PATH=%PATH%;${jdk}/bin"
+          script.bat "set PATH=%PATH%;${jdk}\\bin"
           script.bat "${maven}/bin/mvn --version"
           script.bat "${jdk}/bin/java -version"
           script.bat "java -version"
