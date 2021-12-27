@@ -1,10 +1,10 @@
 package com.checkout;
 
-public class readSpecFile{
+public class ReadSpecFile{
 
  private final Script script
 
-    readSpecFile(Script script) {
+    ReadSpecFile(Script script) {
         this.script = script
     }
 
