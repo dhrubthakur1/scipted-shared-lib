@@ -9,8 +9,8 @@ public class Build {
 
   void execute(def conf = [:], String name="Build") {
         script.stage(name) {
-        def	maven ='MAVEN_PATH'
-        def  jdk ='JAVA_HOME'
+        tool	maven: 'MAVEN_PATH'
+        tool jdk: 'JAVA_HOME'
        				
             script.bat "mvn --version"
             script.bat "java -version"
