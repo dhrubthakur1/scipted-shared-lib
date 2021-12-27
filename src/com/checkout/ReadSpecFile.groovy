@@ -12,7 +12,7 @@ public class ReadSpecFile{
 
     script.stage(name) {
      script.bat "dir"
-     script "def buildData = readYaml file: 'build.yml' "
+     script.bat "def buildData = readYaml file: 'build.yml' "
     
     }
     def buildData = readYaml file: 'C:\\Users\\66480\\.jenkins\\workspace\\scripted-shared-lib\\build.yml' 
