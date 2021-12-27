@@ -6,13 +6,13 @@ def call(def conf=[:]) {
    node {
     new CheckOut(this).execute( conf,'CheckOut')
     new ReadSpecFile(this).execute(conf,'Read Spec')  
-     cleanWs()
+     //cleanWs()
   }
 }
 
 def buildAndDeploy(def conf=[:]) {
    node {
-      cleanWs()
+      //cleanWs()
     //new CheckOut(this).execute( conf,'CheckOut')   
     if(conf.isBuildRequired == 'Yes' && conf.buildType == 'Java'){
       new com.build.Build(this).execute(conf,'Build')
