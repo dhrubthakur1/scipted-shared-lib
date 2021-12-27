@@ -19,7 +19,7 @@ public class Build {
             '''         
         }
          script.env.JAVA_HOME="${script.tool 'JAVA_HOME'}"
-         script.env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+         script.env.PATH="${script.env.JAVA_HOME}/bin:${script.env.PATH}"
 
           script.bat "${maven}/bin/mvn --version"
           script.bat "${jdk}/bin/java -version"
