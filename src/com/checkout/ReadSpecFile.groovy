@@ -10,7 +10,7 @@ public class ReadSpecFile{
 
   void execute(def conf = [:], String name="Read Specfile") {
     script.stage(name) {
-      script.bat "echo Triggering ${name} stage..."
+     script{bat "echo Triggering ${name} stage..."}
         }
     }
 }
