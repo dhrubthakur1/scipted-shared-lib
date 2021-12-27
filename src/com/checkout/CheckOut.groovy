@@ -7,7 +7,7 @@ public class CheckOut {
         this.script = script
     }
 
-  void execute(def conf = [:], String name="Checkout") {
+  void execute(def conf = [:], String name="Check out A") {
         script.stage(name) {
             script.bat "echo Triggering ${name} stage..."
             script.bat "echo 'Execute your desired bash command here'"
