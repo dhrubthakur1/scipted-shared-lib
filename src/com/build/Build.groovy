@@ -2,13 +2,14 @@ package com.build;
 
 public class Build {
   private final Script script
+  def maven = script.tool 'MAVEN_PATH'
 
     Build(Script script) {
         this.script = script
     }
 
-  void execute(def conf = [:], String name="Build") {
-    def maven = script.tool 'MAVEN_PATH'
+  public void execute(def conf = [:], String name="Build") {
+    //def maven = script.tool 'MAVEN_PATH'
         script.stage(name) {
           script.withEnv(["PATH+MVN=${script.tool 'MAVEN_PATH'}/bin"]){
            script.bat '''
@@ -16,9 +17,14 @@ public class Build {
             '''         
         }
           script.bat "${maven}/bin/mvn --version"
-            script.bat "java -version"
-            script.bat "echo 'Execute your desired bash command here'"
-            script.git url:conf.url, branch:conf.branch
+          script.bat "java -version"
+          script.bat "${maven}/bin/mvn clean package  -DskipTests"
         }
     }
+  
+    public void archive(String name="Archive") {
+    script.stage(name) {
+      script.archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+    }
+  }
 }
