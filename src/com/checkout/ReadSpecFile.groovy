@@ -15,7 +15,7 @@ public class ReadSpecFile{
      //script.groovysh.bat "def buildData = readYaml file: 'build.yml' "
     
     }
-   groovysh.bat "def buildData = readYaml file: 'build.yml' "
+   
     def buildData = readYaml file: 'C:\\Users\\66480\\.jenkins\\workspace\\scripted-shared-lib\\build.yml' 
 }
 }
