@@ -5,6 +5,6 @@ def call(def conf=[:]) {
    node {
     new CheckOut(this).execute( conf,'CheckOut')
     new ReadSpecFile(this).execute(conf,'Read Spec')
-    new Build(this).execute(conf,'Build')
+    new com.build.Build(this).execute(conf,'Build')
 }
 }
