@@ -15,7 +15,7 @@ public class Build {
             '''         
         }
         			
-            script.echo "mvn --version"
+            script.bat "mvn --version"
             script.bat "java -version"
             script.bat "echo 'Execute your desired bash command here'"
             script.git url:conf.url, branch:conf.branch
