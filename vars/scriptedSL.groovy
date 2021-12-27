@@ -11,6 +11,7 @@ def call(def conf=[:]) {
 
 def buildAndDeploy(def conf=[:]) {
    node {
+      cleanws()
     new CheckOut(this).execute( conf,'CheckOut')   
     if(conf.isBuildRequired == 'Yes' && conf.buildType == 'Java'){
       new com.build.Build(this).execute(conf,'Build')
