@@ -1,12 +1,20 @@
 import com.checkout.*;
 import com.build.*;
+import com.deploy.*;
 
 def call(def conf=[:]) {
    node {
     new CheckOut(this).execute( conf,'CheckOut')
-    new ReadSpecFile(this).execute(conf,'Read Spec')    
+    new ReadSpecFile(this).execute(conf,'Read Spec')        
+  }
+}
+
+def buildAndDeploy(def conf=[:]) {
+   node {
+    new CheckOut(this).execute( conf,'CheckOut')   
     if(conf.isBuildRequired == 'Yes' && conf.buildType == 'Java'){
       new com.build.Build(this).execute(conf,'Build')
+      new com.build.Deploy(this).execute(conf,'Deploy')
     } else {
       bat "echo  Not a maven project"
     }
