@@ -14,7 +14,10 @@ public class Build {
                 echo "PATH = ${PATH}"
             '''         
         }
-        			
+          script.bat "echo ${JAVA_HOME}"
+          script.bat "echo ${MAVEN_HOME}"
+          script.bat "echo ${MAVEN_PATH}"
+          script.bat "echo ${PATH}"
             script.bat "mvn --version"
             script.bat "java -version"
             script.bat "echo 'Execute your desired bash command here'"
