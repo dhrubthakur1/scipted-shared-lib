@@ -5,3 +5,9 @@ def call(def conf=[:]) {
     new com.checkout.CheckOut(this).execute( conf,'CheckOut')
 }
 }
+
+def callA() {
+   node {
+    new com.checkout.CheckOut(this).execute( def conf=[:],'CheckOut')
+}
+}
