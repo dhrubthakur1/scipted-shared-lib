@@ -1,6 +1,6 @@
 package com.checkout;
 
-puvlic class readSpecFile{
+public class readSpecFile{
 
  private final Script script
 
