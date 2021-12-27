@@ -9,15 +9,12 @@ public class ReadSpecFile{
     }
 
   void execute(def conf = [:], String name="Read Specfile") {
+	  script{
+	  	def buildData = readYaml (file: 'build.yml') 
+	  }
     script.stage(name) {
      script.bat "echo ${conf.url}"		   
-		   script.bat 'echo "read yml start"'
-		   script.bat "def buildData = readYaml (file: 'build.yml') "
-		   script.bat "def deployData = readYaml (file: 'deploy.yml') "
-		   script.bat 'echo "read yml start"'
-		   script.bat "echo ${buildData}"	
-		   script.bat "echo ${deployData}"	          
-		   script.bat "echo conf: ${conf}" 
+		   script.bat 'echo "read yml start"'		   
         }
     }
 }
