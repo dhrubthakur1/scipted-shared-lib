@@ -22,7 +22,7 @@ def buildAndDeploy(def conf=[:]) {
     if(conf.deployRequired == 'Yes'){      
       new com.deploy.Deploy(this).execute(conf,'Deploy')
     } else {
-      bat "echo  Deploymment nit required"
+      bat "echo  Deploymment not required"
     }
   }
 }
