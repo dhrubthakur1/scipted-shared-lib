@@ -11,6 +11,7 @@ public class ReadSpecFile{
   void execute(def conf = [:], String name="Read Specfile") {
 
     script.stage(name) {
+     script.bat "dir"
      def buildData = readYaml (file: 'build.yml') 
     }
 }
