@@ -8,4 +8,3 @@ def call(def conf=[:]) {
     new Build(this).execute(conf,'Build')
 }
 }
-}
