@@ -19,6 +19,7 @@ public class Build {
           script.bat "${maven}/bin/mvn --version"
           script.bat "java -version"
           script.bat "${maven}/bin/mvn clean package  -DskipTests"
+          archive();
         }
     }
   
