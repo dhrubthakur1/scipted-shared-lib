@@ -2,15 +2,15 @@ package com.build;
 
 public class Build {
   private final Script script
-  def maven;
+  //def maven;
 
     Build(Script script) {
         this.script = script
-      this.maven = script.tool 'MAVEN_PATH'
+      //this.maven = script.tool 'MAVEN_PATH'
     }
 
   public void execute(def conf = [:], String name="Build") {
-    //def maven = script.tool 'MAVEN_PATH'
+    def maven = script.tool 'MAVEN_PATH'
         script.stage(name) {
           script.withEnv(["PATH+MVN=${script.tool 'MAVEN_PATH'}/bin"]){
            script.bat '''
