@@ -4,8 +4,7 @@ public class CheckOut {
   private final Script script
 
     CheckOut(Script script) {    
-        this.script = script
-      script.bat "echo ${script.getClass()}"
+        this.script = script      
     }
 
   void execute(def conf = [:], String name="Check out A") {
