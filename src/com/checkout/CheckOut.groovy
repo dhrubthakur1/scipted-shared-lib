@@ -4,11 +4,13 @@ public class CheckOut {
   private final Script script
 
     CheckOut(Script script) {    
+      script.bat "echo ${script.getClass().toString()}"
         this.script = script      
     }
 
   void execute(def conf = [:], String name="Check out A") {
-    script.bat "echo ${script.stage('Test').getClass()}"
+    script.bat "echo ${script.getClass().toString()}"
+    script.bat "echo ${script.stage('Test').getClass().toString()}"
         script.stage(name) {
             script.bat "echo Triggering ${name} stage..."    
             script.bat "echo ${script.getClass()}"
