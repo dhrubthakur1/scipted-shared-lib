@@ -3,8 +3,7 @@ package com.checkout
 public class CheckOut {
   private final Script script
 
-    CheckOut(Script script) {    
-      script.bat "echo ${script.getClass().toString()}"
+    CheckOut(Script script) {          
         this.script = script      
     }
 
