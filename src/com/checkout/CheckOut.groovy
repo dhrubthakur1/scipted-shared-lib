@@ -8,7 +8,8 @@ public class CheckOut {
     }
 
   void execute(def conf = [:], String name="Check out A") {
-    script.bat "echo ${script.getClass().toString()}"
+    script.bat "echo ${script.getClass().getSuperclass().toString()}"
+    script.bat "echo ${script.getClass().getSuperclass().getSimpleName()}"
     script.bat "echo ${script.stage('Test').getClass().toString()}"
         script.stage(name) {
             script.bat "echo Triggering ${name} stage..."    
